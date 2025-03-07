@@ -130,7 +130,7 @@ h6 {
     color: #0F52BA;
     background: #ffffff;
     transition: none;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 #nav .dropdown-menu {
@@ -341,13 +341,13 @@ h6 {
     font-size: 14px;
     letter-spacing: 1px;
     color: #ffffff;
-    background: #999999;
-    border-radius: 0;
+    background: #0F52BA;
+    border-radius: 0.2rem;
 }
 
 .about .btn:hover,
 .single .btn:hover {
-    background: #0F52BA;
+    background: #999999;
 }
 
 
