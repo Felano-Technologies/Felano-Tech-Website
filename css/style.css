@@ -313,6 +313,7 @@ h6 {
 .about .about-img img,
 .single .single-img img {
     width: 100%;
+    border-radius: 5px;
 }
 
 .about .about-content,
@@ -322,6 +323,7 @@ h6 {
     margin: -100px auto 60px auto;
     padding: 30px;
     background: #ffffff;
+    border-radius: 5px;
 }
 
 .about .about-content h2,
@@ -373,6 +375,8 @@ h6 {
     width: 100%;
     padding: 30px 15px;
     background: #0F52BA;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .service .service-icon i {
@@ -386,6 +390,8 @@ h6 {
     width: 100%;
     padding: 30px 15px;
     background: #f2f2f2;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .service .service-detail h4,
@@ -436,7 +442,7 @@ h6 {
     letter-spacing: 1px;
     text-transform: uppercase;
     background: #ffffff;
-    border-radius: 0;
+    border-radius: 10px;
     transition: 0.3s;
 }
 
@@ -460,6 +466,8 @@ h6 {
     background: #ffffff;
     text-align: center;
     margin-bottom: 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .pricing .price-plan {
@@ -467,6 +475,8 @@ h6 {
     background: #353535;
     margin: 0 0 30px;
     padding: 20px 0;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .pricing .price-plan i {
@@ -539,7 +549,7 @@ h6 {
     padding: 10px 30px;
     text-transform: uppercase;
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
 }
 
 .pricing .price-btn {
@@ -619,12 +629,12 @@ h6 {
 
 .skills .progress {
     margin-bottom: 15px;
-    border-radius: 0;
+    border-radius: 20px;
 }
 
 .skills .progress .progress-bar {
     background: #0F52BA;
-    border-radius: 0;
+    border-radius: 20px;
 }
 
 
@@ -776,7 +786,9 @@ h6 {
     position: relative;
     background: #000000;
     overflow: hidden;
-    
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
 }
 
 .team-img img {
@@ -807,6 +819,7 @@ h6 {
     height: 35px;
     background: #0F52BA;
     border: 1px solid #ffffff;
+    border-radius: 50%;
 }
 
 .team .team-item .team-social a i {
@@ -834,6 +847,8 @@ h6 {
     padding: 30px 15px;
     text-align: center;
     background: #f2f2f2;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .team .team-item .team-info h3 {
