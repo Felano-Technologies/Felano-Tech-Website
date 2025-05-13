@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.felanotechnologies.com/</loc>
+    <loc>https://felanotechnologies.tech/</loc>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/about.html</loc>
+    <loc>https://felanotechnologies.tech/about.html</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/service.html</loc>
+    <loc>https://felanotechnologies.tech/service.html</loc>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/pricing.html</loc>
+    <loc>https://felanotechnologies.tech/pricing.html</loc>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/portfolio.html</loc>
+    <loc>https://felanotechnologies.tech/portfolio.html</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/client.html</loc>
+    <loc>https://felanotechnologies.tech/client.html</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/contact.html</loc>
+    <loc>https://felanotechnologies.tech/contact.html</loc>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/review.html</loc>
+    <loc>https://felanotechnologies.tech/review.html</loc>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/privacy_policy.html</loc>
+    <loc>https://felanotechnologies.tech/privacy_policy.html</loc>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://www.felanotechnologies.com/terms_and_conditions.html</loc>
+    <loc>https://felanotechnologies.tech/terms_and_conditions.html</loc>
     <priority>0.60</priority>
   </url>
 </urlset>
