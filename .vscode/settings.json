@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/skill.html"
+    "livePreview.defaultPreviewPath": "/skill.html",
+    "liveServer.settings.port": 5501
 }
