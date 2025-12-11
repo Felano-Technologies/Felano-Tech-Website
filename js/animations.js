@@ -114,25 +114,55 @@ document.addEventListener('DOMContentLoaded', () => {
         new TypeWriter(txtElement, words, wait);
     }
 
-    // --- Vanilla Tilt Effect (Simplified) ---
+    // --- Vanilla Tilt Effect (Simplified & Optimized) ---
     const tiltElements = document.querySelectorAll('.service-item, .team-item');
 
     tiltElements.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within the element.
-            const y = e.clientY - rect.top;  // y position within the element.
+        let rect = card.getBoundingClientRect();
+        let mouseX = 0;
+        let mouseY = 0;
+        let isMoving = false;
+
+        // Update rect on scroll or resize to ensure accuracy without querying every frame
+        // Debounce/Throttle could be added here for even better perf but this is a good middle ground
+        window.addEventListener('scroll', () => { rect = card.getBoundingClientRect(); }, { passive: true });
+        window.addEventListener('resize', () => { rect = card.getBoundingClientRect(); }, { passive: true });
+
+        // On mouse enter, update rect just in case
+        card.addEventListener('mouseenter', () => {
+            rect = card.getBoundingClientRect();
+        });
+
+        const updateTilt = () => {
+            if (!isMoving) return;
 
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
+
+            // Relative pos
+            const x = mouseX - rect.left;
+            const y = mouseY - rect.top;
 
             const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
             const rotateY = ((x - centerX) / centerX) * 10;
 
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+
+            requestAnimationFrame(updateTilt);
+        };
+
+        card.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!isMoving) {
+                isMoving = true;
+                requestAnimationFrame(updateTilt);
+            }
         });
 
         card.addEventListener('mouseleave', () => {
+            isMoving = false;
             card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
         });
     });

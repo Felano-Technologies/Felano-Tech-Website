@@ -8,16 +8,22 @@ const ctx = canvas ? canvas.getContext('2d') : null;
 
 if (canvas && ctx) {
     let particlesArray;
+    let animationId;
+    let isVisible = true;
 
     // Set Canvas Size
     canvas.width = canvas.parentElement.clientWidth;
     canvas.height = canvas.parentElement.clientHeight;
 
-    // Handle Resize
+    // Handle Resize - Throttled
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        canvas.width = canvas.parentElement.clientWidth;
-        canvas.height = canvas.parentElement.clientHeight;
-        init();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            init();
+        }, 100);
     });
 
     // Mouse Interaction
@@ -68,22 +74,25 @@ if (canvas && ctx) {
             }
 
             // Check collision detection - mouse position / particle position
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
+            // Only check if mouse is active to save calc
+            if (mouse.x != null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < mouse.radius + this.size) {
-                if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-                    this.x += 2;
-                }
-                if (mouse.x > this.x && this.x > this.size * 10) {
-                    this.x -= 2;
-                }
-                if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-                    this.y += 2;
-                }
-                if (mouse.y > this.y && this.y > this.size * 10) {
-                    this.y -= 2;
+                if (distance < mouse.radius + this.size) {
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                        this.x += 2;
+                    }
+                    if (mouse.x > this.x && this.x > this.size * 10) {
+                        this.x -= 2;
+                    }
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                        this.y += 2;
+                    }
+                    if (mouse.y > this.y && this.y > this.size * 10) {
+                        this.y -= 2;
+                    }
                 }
             }
 
@@ -100,7 +109,9 @@ if (canvas && ctx) {
     function init() {
         particlesArray = [];
         // Calculate number of particles relative to area
-        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        // Reduced density: changed divisor from 9000 to 15000 and capped at 80
+        let numberOfParticles = (canvas.height * canvas.width) / 15000;
+        if (numberOfParticles > 80) numberOfParticles = 80;
 
         for (let i = 0; i < numberOfParticles; i++) {
             let size = (Math.random() * 3) + 1;
@@ -119,6 +130,8 @@ if (canvas && ctx) {
 
     // Animation Loop
     function animate() {
+        if (!isVisible) return; // Stop loop if not visible
+
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -131,12 +144,17 @@ if (canvas && ctx) {
     // Check if particles are close enough to draw line
     function connect() {
         let opacityValue = 1;
+        // Optimization: Reduce connection distance
+        const connectDistance = (canvas.width / 7) * (canvas.height / 7);
+
         for (let a = 0; a < particlesArray.length; a++) {
             for (let b = a; b < particlesArray.length; b++) {
+                // Quick check to avoid square root or expensive math if obviously too far using simple bounding box logic? 
+                // JS engines are fast enough for this simple math if N is small (which we ensured with N < 80)
                 let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
                     ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
 
-                if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                if (distance < connectDistance) {
                     opacityValue = 1 - (distance / 20000);
                     // Stroke color matches theme
                     ctx.strokeStyle = 'rgba(79, 70, 229,' + opacityValue + ')';
@@ -149,6 +167,20 @@ if (canvas && ctx) {
             }
         }
     }
+
+    // Intersection Observer to pause animation when off-screen
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                isVisible = true;
+                animate();
+            } else {
+                isVisible = false;
+            }
+        });
+    });
+
+    observer.observe(canvas);
 
     init();
     animate();
