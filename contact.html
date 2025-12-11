@@ -1,127 +1,170 @@
 <!DOCTYPE html>
-<html>
-  <head>
-<!-- Primary Meta Tags -->
-<title>Felanotechnologies — Contact</title>
-<meta name="title" content="Felanotechnologies — Contact">
-<meta name="description" content="Ready to start your digital journey? Contact us today via email, phone, or our online form. Let’s build something great together.">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Keywords -->
-<meta name="keywords" content="Felanotechnologies, IT company, web development, cloud solutions, tech consulting, cybersecurity, digital transformation">
+<html lang="en">
 
-<!-- Author -->
-<meta name="author" content="Felanotechnologies">
+<head>
+  <meta charset="utf-8">
+  <title>Felanotechnologies — Contact</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Felanotechnologies, Contact, IT Support, Web Development" name="keywords">
+  <meta content="Ready to start your digital journey? Contact us today." name="description">
 
-<!-- Robots -->
-<meta name="robots" content="index, follow">
+  <!-- Favicon -->
+  <link href="img/favicon.png" rel="icon">
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://felanotechnologies.com/" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
 
+  <!-- Libraries CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
+  <!-- Main Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
 
-<!-- Bing Site Verification -->
-<meta name="msvalidate.01" content="9469700450DF6E02FD19700C89C514C5" />
+  <!-- Scripts (reCAPTCHA) -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://felanotechnologies.com/">
-<meta property="og:title" content="Felanotechnologies — Innovative IT Solutions">
-<meta property="og:description" content="Expert IT services for web, cloud, and digital systems. Partner with us for reliable and scalable solutions.">
-<meta property="og:image" content="https://felanotechnologies.com/assets/preview-image.jpg">
+<body class="tech-theme">
+  <!-- Nav Start -->
+  <div id="nav">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/favicon.png" alt="Logo">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://felanotechnologies.com/">
-<meta property="twitter:title" content="Felanotechnologies — Innovative IT Solutions">
-<meta property="twitter:description" content="Empowering businesses through smart tech solutions.">
-<meta property="twitter:image" content="https://felanotechnologies.com/assets/preview-image.jpg">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="service.html" class="nav-item nav-link">Services</a>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+              <div class="dropdown-menu">
+                <a href="team.html" class="dropdown-item">Team Members</a>
+                <a href="review.html" class="dropdown-item">Reviews</a>
+                <a href="client.html" class="dropdown-item">Clients</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link active">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Nav End -->
 
+  <!-- Contact Section Start -->
+  <div class="contact bg-grid mt-100" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>Get In Touch</h2>
+        <p class="mx-auto" style="max-width: 600px;">
+          Thanks for taking the time to reach out to us. How can we help you today?
+        </p>
+      </div>
 
-    <!-- Favicon -->
-    <link href="img/favicon.png" rel="icon">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://kit.fontawesome.com/9bdc906322.js"></script>
-    <script async="" src="https://cdn.splitbee.io/sb.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
-  </head>
-  <body>
-    <nav class="navbar is-transparent is-planner animate-fadeDown">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 animate-up">
+          <div class="glass-panel p-4 p-md-5 rounded-lg">
+            <form action="https://usebasin.com/f/313b78eb1480" method="POST" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label class="text-white small text-uppercase font-weight-bold ml-1">Name</label>
+                  <input type="text" class="form-control" name="name" required />
+                </div>
+                <div class="form-group col-md-6">
+                  <label class="text-white small text-uppercase font-weight-bold ml-1">Email</label>
+                  <input type="email" class="form-control" name="email" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="text-white small text-uppercase font-weight-bold ml-1">Message</label>
+                <textarea class="form-control" name="message" rows="6" required></textarea>
+              </div>
+
+              <!-- Hidden Bot Protection Field -->
+              <div class="form-group d-none">
+                <input type="hidden" name="bot_vortex">
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill" style="min-width: 200px;">
+                  Submit <i class="ion-ios-paper-plane ml-2"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact End -->
+
+  <!-- Footer Start -->
+  <div class="footer">
+    <div class="footer-top">
       <div class="container">
-        <div class="navbar-brand"><a class="navbar-item" href="index.html"><img src="img/favicon.png" alt="Eugene Anokye | Software Engineer" height="48"></a></div>
-        <div class="navbar-menu" id="navMenu">
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <p class="buttons"><a class="button is-medium tooltip is-tooltip-bottom" data-tooltip="Reset" onclick="document.getElementById('form').reset();"><span class="icon is-small"><i class="fas fa-undo-alt"></i></span></a><a class="button is-medium tooltip is-tooltip-bottom" data-tooltip="Close" href="/"><span class="icon is-small"><i class="fas fa-times"></i></span></a></p>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>About Us</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="index.html">Home</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="about.html">About us</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="contact.html">Contact</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="terms_and_condition.html">Terms & condition</a></li>
+              <li><i class="ion-ios-arrow-forward"></i> <a href="privacy_policy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Kumasi<br>
+              Ashanti Region<br>
+              Ghana <br>
+              <strong class="text-white">Phone:</strong>
+              <a href="tel:+233506514687" class="text-white hover:text-green-200 transition">+233 50-651-4687</a>,
+              <a href="tel:+233599012817" class="text-white hover:text-green-200 transition">+233 59-901-2817</a><br>
+
+              <strong class="text-white">Email:</strong>
+              <a href="mailto:felanotechnologies@gmail.com" class="text-white hover:text-green-200 transition">
+                felanotechnologies@gmail.com
+              </a><br>
+            </p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/felanotechnologies?igsh=ZzNrZm9sbnR3emRt&utm_source=qr"><i
+                  class="ion-logo-instagram"></i></a>
             </div>
           </div>
         </div>
       </div>
-    </nav>
-    <div class="is-form-page">
-      <section class="is-white has-text-centered">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-8"><img class="avatar" src="img/favicon.png">
-              <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">Thanks for taking the time to reach out to us. How can we help you today?</h1>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="is-white">
-        <div class="container">
-          <form accept-charset="UTF-8" action="https://usebasin.com/f/313b78eb1480" data-basin-form data-basin-success-action='render' data-basin-spam-protection='recaptcha'enctype="multipart/form-data" method="POST">
-            <div class="columns is-centered">
-              <div class="column is-half">
-                <div class="field">
-                  <label class="label">Name</label>
-                  <div class="control is-expanded">
-                    <input class="input is-large" name="name" type="text" required>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-half">
-                <div class="field">
-                  <label class="label">Email</label>
-                  <div class="control is-expanded">
-                    <input class="input is-large" name="email" type="email" required>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="columns is-centered">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Message</label>
-                  <div class="control is-expanded">
-                    <textarea class="textarea is-large" name="message" rows="5" required></textarea>
-                  </div>
-                </div>
-                <div class="field is-hidden">
-                  <label class="is-hidden"></label>
-                  <div class="control is-expanded is-hidden">
-                    <input class="is-hidden" name="bot_vortex" type="hidden">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="columns is-centered">
-              <div class="column is-one-third">
-                <div class="field">
-                  <div class="control">
-                    <button type="submit" class="button is-primary is-outlined is-medium is-fullwidth is-rounded">Submit</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="form1-success" style="display: none;">Thank you for your submission! 🚀🚀🚀</div>
-            <div id="form1-error" style="display: none;">Oops, something went wrong 🚨🚨🚨</div>
-          </form>
-        </div>
-      </section>
     </div>
-    <script src="/javascript/script.js"></script>
-    <script src="https://js.usebasin.com/v2.4.0.min.js" async></script>
-  </body>
+  </div>
+  <!-- Footer End -->
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Main Javascript -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+
 </html>
