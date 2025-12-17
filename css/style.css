@@ -48,6 +48,10 @@
 
 
 /* Base Reset */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
@@ -107,15 +111,29 @@ a:hover {
     z-index: 1000;
     padding: 20px 0;
     transition: all 0.4s ease;
+    /* Clear Glass Effect - Removed grey tint */
+    background: rgba(5, 5, 17, 0.05);
+    /* Matching dark theme slightly */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#nav .navbar {
+    background: transparent !important;
+    /* Override Bootstrap bg-dark */
+    padding: 0;
 }
 
 #nav.nav-sticky {
-    padding: 10px 0;
-    background: rgba(5, 5, 17, 0.85);
-    /* Semi-transparent dark bg */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    /* Clearer Liquid Glass for sticky */
+    background: rgba(5, 5, 20, 0.4);
+    /* Darker but see-through */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Global Section Backgrounds */
@@ -203,7 +221,9 @@ a:hover {
 }
 
 #nav .navbar-brand img {
-    height: 50px;
+    height: 80px;
+    transition: height 0.3s ease;
+    max-height: 100px;
 }
 
 #nav .nav-link {
@@ -266,7 +286,8 @@ a:hover {
 */
 .header {
     min-height: 100vh;
-    padding-top: 120px;
+    padding-top: 160px;
+    /* Increased to account for larger logo (80px + padding) */
     /* Prevent Navbar overlap */
     position: relative;
     display: flex;
@@ -752,6 +773,20 @@ a:hover {
     padding-left: 5px;
 }
 
+@media (max-width: 768px) {
+    .footer .row>div {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer h3::after,
+    .footer h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
 /* Back to Top */
 .back-to-top {
     position: fixed;
@@ -787,8 +822,8 @@ a:hover {
 
     /* Ensure Hero content isn't hidden behind nav on mobile */
     .header {
-        padding-top: 100px;
-        /* Nav height + buffer */
+        padding-top: 150px;
+        /* Nav height (approx 120px) + buffer */
         min-height: auto;
         /* Allow content to dictate height on small screens */
         padding-bottom: 60px;
