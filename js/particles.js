@@ -120,8 +120,8 @@ if (canvas && ctx) {
             let directionX = (Math.random() * 0.4) - 0.2; // Speed
             let directionY = (Math.random() * 0.4) - 0.2;
 
-            // Colors: Cyan and Pink/Purple
-            let colors = ['rgba(6, 182, 212, 0.7)', 'rgba(236, 72, 153, 0.7)', 'rgba(79, 70, 229, 0.7)'];
+            // Colors: Indigo, Emerald and Blue for light theme
+            let colors = ['rgba(79, 70, 229, 0.35)', 'rgba(16, 185, 129, 0.35)', 'rgba(6, 182, 212, 0.35)'];
             let color = colors[Math.floor(Math.random() * colors.length)];
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
@@ -155,9 +155,9 @@ if (canvas && ctx) {
                     ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
 
                 if (distance < connectDistance) {
-                    opacityValue = 1 - (distance / 20000);
-                    // Stroke color matches theme
-                    ctx.strokeStyle = 'rgba(79, 70, 229,' + opacityValue + ')';
+                    opacityValue = 0.6 - (distance / 20000);
+                    // Stroke color - subtle on light background
+                    ctx.strokeStyle = 'rgba(79, 70, 229,' + Math.max(opacityValue * 0.3, 0.02) + ')';
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
